@@ -18,7 +18,9 @@ public class Exam1 {
 			con = DriverManager.getConnection(url, user, password);
 
 			// (2)SQL文を作成
-			sql = "INSERT INTO test_members (id,name,age,dep_id) VALUES (3, '遠藤次郎',55,2);";
+			sql = "INSERT INTO test_members (id,name,age,dep_id) VALUES " +"('山田太郎', 62, 1),"
+                +"('佐藤花子', 33, 2),"
+                +"('遠藤次郎', 55, 2)";
 
 			// (3)SQL実行準備
 			pstmt = con.prepareStatement(sql);
