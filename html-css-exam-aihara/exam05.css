@@ -1,0 +1,40 @@
+header{
+   width: 100%;
+   background-color: rgb(123, 76, 86);
+   height: 100px;
+   color: black;
+   justify-content: center;
+   align-items: center;
+    display: flex;
+}
+div.main{
+    
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.sidebar{
+    height: 860px;
+    width: 20%;
+    background-color: rgb(211, 159, 187);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.content{
+     height: 860px;
+    width: 60%;
+    background-color: lightcoral;display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer{
+    width: 100%;
+    background-color: rgb(247, 186, 223);
+    height: 100px;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
