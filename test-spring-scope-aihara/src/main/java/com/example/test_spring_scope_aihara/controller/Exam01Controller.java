@@ -1,16 +1,23 @@
 package com.example.test_spring_scope_aihara.controller;
 
-import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestScope("/exam01")
+@RequestMapping("/exam01")
 public class Exam01Controller {
+    @RequestMapping("")
     public String index(){
         return "exam01";
     }
-
-    @RequestScope("/exam01result")
-    public String result(String name,String password){
-        
+    @RequestMapping("/exam01result")
+    public String result(String email,String password,Model model){
+        if("yamada@sample.com".equals(email) && "yamayama".equals(password)){
+            model.addAttribute("result","「成功」");
+        } else {
+            model.addAttribute("result","「失敗」");
+        }
+        return "exam01-result";
     }
 }
