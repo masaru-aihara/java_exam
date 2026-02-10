@@ -1,18 +1,33 @@
 package com.example.test_spring_mvc_aihara.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.test_spring_mvc_aihara.form.ReceiveNameForm;
 
 @Controller
 @RequestMapping("/exam03")
 public class Exam03Controller {
+    @ModelAttribute
+    public ReceiveNameForm setUpForm() {
+        return new ReceiveNameForm();
+    }
+
     @RequestMapping("")
-    public String index(){
+    public String index() {
         return "name-form";
     }
+
     @RequestMapping("/nameform")
-    public String form(String name){
+    public String form(String name) {
         System.out.println("入力された値は" + name + "です。");
+        return "finished";
+    }
+
+    @RequestMapping("/nameform2")
+    public String form2(ReceiveNameForm form) {
+        System.out.println("入力された値は" + form.getName() + "です。");
         return "finished";
     }
 }

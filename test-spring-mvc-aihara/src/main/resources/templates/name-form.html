@@ -6,9 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="finished.html" th:action="@{/exam03/nameform}">
+    <form action="finished.html" th:action="@{/exam03/nameform2}"  method="post" th:object="${setUpForm}">
         <h1>名前を入力してください</h1>
-        <input type="text" name="name">
+        <input type="text" th:field="*{name}">
         <button>送信</button>
     </form>
 </body>

@@ -3,15 +3,22 @@ import java.util.ArrayList;
 public class ShoppingCart {
     
 List<Item> list = new ArrayList<>();
-public int getTotalPrice(Item item){
-    int total = 0;
-    total = total + item.getPrice();
-    return total;
-}
-public int getAveragePrice(Item item){
-    int total = 0;
-    total = total + item.getPrice();
-    int average = total / list.size();
+public int getTotalPrice() {
+        int total = 0;
+        for (Item item : list) {
+            total += item.getPrice();
+        }
+        return total;
+    }
+
+public int getAveragePrice(){
+    if (list.isEmpty()) {  
+        return 0;
+    }
+    int average = getTotalPrice() / list.size();
     return average;
+}
+public void add(Item item) {
+    list.add(item);
 }    
 }
