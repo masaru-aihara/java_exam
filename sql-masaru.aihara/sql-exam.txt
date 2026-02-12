@@ -1,0 +1,31 @@
+問題1
+INSERT INTO items(id,category_id,name,price) VALUES (13,1,'鰯',150),(14,2,'羊',650);
+
+問題2
+UPDATE items SET price=price*0.9:
+
+問題3
+DELETE FROM employees WHERE end_date<='2013-03-31';
+
+問題4
+SELECT * FROM employees WHERE end_date IS null ORDER BY end_date asc LIMIT 1;
+
+問題5
+SELECT r.name,p.name FROM regions AS r INNER JOIN prefectures AS p ON r.code=p.region_code;
+
+問題6
+SELECT sum(population) FROM populations;
+
+問題7
+SELECT pr.name,
+CASE WHEN po.gender_code='m' THEN '男' 
+WHEN po.gender_code='f' THEN '女' 
+ELSE po.gender_code END AS gender,
+SUM(po.population) as population 
+FROM prefectures AS pr 
+INNER JOIN populations AS po ON pr.code=po.prefecture_code
+WHERE pr.region_code='80'
+GROUP BY pr.code, pr.name, po.gender_code
+ORDER BY pr.code ASC, po.gender_code DESC;
+問題8
+
